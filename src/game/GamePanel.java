@@ -53,6 +53,8 @@ public class GamePanel extends JPanel implements Runnable{
 			Enermy enermy = new Enermy(objectManager,ObjectId.Enermy,x, y, 30, 30);
 			objectManager.addObject(enermy);
 		}
+		
+		
 		//패널과 키보드 리스너 연결
 		addKeyListener(new KeyBoard(player));
 		
@@ -80,7 +82,7 @@ public class GamePanel extends JPanel implements Runnable{
 			//오브젝트 매니져에 등록된 모든 ~~ 객체를 대상으로 tick()을 호출하자.
 			for(int i=0; i<objectManager.list.size();i++){
 				GameObject obj = objectManager.list.get(i);
-				obj.tick();
+				obj.tick(); //게임 오브젝트에 등록된 각 오브젝트의 tick()을 호출
 				
 			}
 			
